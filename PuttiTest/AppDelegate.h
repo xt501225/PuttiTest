@@ -6,7 +6,6 @@
 //  Copyright © 2016年 Sam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "ItemListVC.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

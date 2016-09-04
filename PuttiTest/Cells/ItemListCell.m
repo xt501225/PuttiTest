@@ -2,7 +2,7 @@
 //  ItemListCell.m
 //  PuttiTest
 //
-//  Created by summer on 16/9/2.
+//  Created by Sam on 16/9/2.
 //  Copyright © 2016年 Sam. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 
 @interface ItemListCell()
-@property (nonatomic,strong) EventModel* itemModel;
+@property (nonatomic,strong) Model* itemModel;
 
 @end
 
@@ -57,7 +57,7 @@
 }
 
 
-- (void)prepareForDisplayWithValue:(EventModel *)itemModel {
+- (void)prepareForDisplayWithValue:(Model *)itemModel {
     self.itemModel = itemModel;
     [_titleLabel setText:[_itemModel title]];
     [_subtitleLabel setText:[_itemModel ordering]];

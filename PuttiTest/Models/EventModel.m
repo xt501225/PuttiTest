@@ -2,7 +2,7 @@
 //  EventModel.m
 //  PuttiTest
 //
-//  Created by summer on 16/9/2.
+//  Created by Sam on 16/9/2.
 //  Copyright © 2016年 Sam. All rights reserved.
 //
 
