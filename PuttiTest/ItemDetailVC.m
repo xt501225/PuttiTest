@@ -54,9 +54,7 @@
     [_tableView setDataSource:self];
     [_tableView setRowHeight:UITableViewAutomaticDimension];
     [_tableView setEstimatedRowHeight:44.0];
-    //[_tableView setContentInset:[self tableViewInset]];
     [self.view addSubview:_tableView];
-    //[self setAutomaticallyAdjustsScrollViewInsets:NO];
     
     // setction descriptor
     _sectionDescriptors = [NSMutableArray<SectionDescriptor *> new];
@@ -78,7 +76,6 @@
     
     
     RowDescriptor *newsID = [RowDescriptor descriptorWithCellClass:[ItemLabelCell class] cellValue:[LabelCellModel modelWithLeftStr: CONSTANT_NEWSID rightStr: [NSString stringWithFormat: @"%lu", _eventModel.newsID]]];
-    RowDescriptor *title = [RowDescriptor descriptorWithCellClass:[ItemLabelCell class] cellValue:[LabelCellModel modelWithLeftStr: CONSTANT_TITLE rightStr: _eventModel.title]];
     RowDescriptor *ordering = [RowDescriptor descriptorWithCellClass:[ItemLabelCell class] cellValue:[LabelCellModel modelWithLeftStr: CONSTANT_ORDERING rightStr: _eventModel.ordering]];
     RowDescriptor *startDate = [RowDescriptor descriptorWithCellClass:[ItemLabelCell class] cellValue:[LabelCellModel modelWithLeftStr: CONSTANT_START_DATE rightStr: _eventModel.startDate]];
     RowDescriptor *eventDateTime = [RowDescriptor descriptorWithCellClass:[ItemLabelCell class] cellValue:[LabelCellModel modelWithLeftStr: CONSTANT_EVENT_DATETIME rightStr: _eventModel.eventDateTime]];
@@ -91,7 +88,6 @@
     RowDescriptor *synopsis = [RowDescriptor descriptorWithCellClass:[ItemRichLabelCell class] cellValue:[str stringByAppendingString:_eventModel.synopsis]];
     
     [_infoSD addRowDescriptor:newsID];
-    [_infoSD addRowDescriptor:title];
     [_infoSD addRowDescriptor:ordering];
     [_infoSD addRowDescriptor:startDate];
     [_infoSD addRowDescriptor:eventDateTime];

@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFDownloadRequestOperation.xcscheme</key>
+		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AFNetworking.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,11 +29,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>YTKNetwork.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>YYModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +37,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>28EDA0AC3272A77B0575F728B99261BC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>42CD6F6ABA08E5D69D8843A4EF550C40</key>
+		<key>45075B19D3DEA263E515E48DEFAEFB92</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,22 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>731C68DE5A2E9760AF3CED90EBDEF033</key>
+		<key>7E8ADD838E5862BFF56FE562851BDFAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C04E7DEDB7DEC455281F8A4C75FC1BF</key>
+		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B3C760711B585710870482548EF04B3F</key>
+		<key>D058B89EB3B3DF45457A2DCD3971AFFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C3C56D055CEBD1A82DA04E4338C09F0F</key>
+		<key>F0A6183F475D0983F02443D0FEA35BAC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

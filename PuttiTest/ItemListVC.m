@@ -7,45 +7,86 @@
 //
 
 #import "ItemListVC.h"
-
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
 
 @implementation ItemListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.navigationItem.title =@"Putti Test";
+    [self.tableView setEstimatedRowHeight:44.0];
+    //[self loadDataFromServerByAFNetworking];
+    [self loadDataFromServerByNSURLConnection];
+    
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSMutableDictionary *defaults = [[NSMutableDictionary alloc] init];
-    [defaults setObject:@"interview" forKey:@"event_type"];
-    
-    BaseRequest *api =
-    [[BaseRequest alloc] initWithDict:defaults
-                                   URL:SERVER_URL
-                             reqMethod:YTKRequestMethodPost
-                 requestSerializerType:YTKRequestSerializerTypeHTTP
-                             cacheTime:0];
-    [api start];
-    [api.requestOperation waitUntilFinished]; //同步调用
-     NSDictionary* result = [api responseJSONObject];
-    
-    //YYModel转换
-    self.events = [[Events alloc]init];
-    NSString* jsonData = [result valueForKeyPath:CONSTANT_EVENT];
-    self.events.itemModels = [NSArray yy_modelArrayWithClass:[EventModel class]
-                               json:jsonData];
-    
-    [self.tableView setEstimatedRowHeight:80];
-    //更新数据
-    [self.tableView reloadData];
-    
-    
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)loadDataFromServerByAFNetworking {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.label.text = @"Loading";
+    
+    NSDictionary *dic = @{@"event_type": @"interview"};
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    [manager.requestSerializer setValue:@"MyTestClient : X-Signiture=1Uhi8g9A91" forHTTPHeaderField:@"User-Agent"];
+    [manager.requestSerializer setValue:@"697381b065bbfe4a714cd14cf394978e" forHTTPHeaderField:@"X-Key"];
+    
+    NSString *urlstr = [NSString stringWithFormat:SERVER_URL];
+
+    [manager POST:urlstr parameters:dic progress:nil
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              [hud hideAnimated:YES];
+              NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+              // JSON TO Model
+              self.events = [[Events alloc]init];
+              NSString* jsonData = [dic valueForKeyPath:CONSTANT_EVENT];
+              self.events.itemModels = [NSArray yy_modelArrayWithClass:[EventModel class] json:jsonData];
+              [self.tableView reloadData];
+    }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              NSLog(@"%@",error.localizedDescription);
+          }];
+    
+}
+
+- (void)loadDataFromServerByNSURLConnection {
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.label.text = @"Loading";
+    
+    NSString *urlStr = [NSString stringWithFormat:SERVER_URL];
+    NSURL *url = [NSURL URLWithString:urlStr];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    request.HTTPBody = [@"event_type=interview" dataUsingEncoding:NSUTF8StringEncoding];
+    //request.timeoutInterval = 10;
+    
+    [request setValue:@"MyTestClient : X-Signiture=1Uhi8g9A91" forHTTPHeaderField:@"User-Agent"];
+    [request setValue:@"697381b065bbfe4a714cd14cf394978e" forHTTPHeaderField:@"X-Key"];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        [hud hideAnimated:YES];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        // JSON TO Model
+        self.events = [[Events alloc]init];
+        NSString* jsonData = [dic valueForKeyPath:CONSTANT_EVENT];
+        self.events.itemModels = [NSArray yy_modelArrayWithClass:[EventModel class] json:jsonData];
+        [self.tableView reloadData];
+
+    }];
 }
 
 #pragma mark - TableView dataSource
