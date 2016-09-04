@@ -107,7 +107,6 @@ static const int SizeI = 80;
 }
 
 #pragma mark Component
-
 - (UILabel *)componentTitleLabel {
     UILabel *label = [UILabel new];
     CGFloat titleFontSize =[UIFont systemFontSize];

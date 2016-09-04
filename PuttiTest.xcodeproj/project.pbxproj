@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		645907603E273E130645C258 /* libPods-PuttiTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 864534A834B5A2D645973E1E /* libPods-PuttiTest.a */; };
+		C40947AC1D7C17FB00455D4B /* AbstractItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C40947AB1D7C17FB00455D4B /* AbstractItemVC.m */; };
 		C43E08861D78E3CC00676E6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C43E08851D78E3CC00676E6B /* main.m */; };
 		C43E08891D78E3CC00676E6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C43E08881D78E3CC00676E6B /* AppDelegate.m */; };
 		C43E088C1D78E3CC00676E6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43E088B1D78E3CC00676E6B /* ViewController.m */; };
@@ -32,6 +33,8 @@
 		864534A834B5A2D645973E1E /* libPods-PuttiTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PuttiTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		986378BBF654F64F6E341685 /* Pods-PuttiTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuttiTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuttiTest/Pods-PuttiTest.debug.xcconfig"; sourceTree = "<group>"; };
 		C40947A61D7C146300455D4B /* PCH.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCH.pch; sourceTree = "<group>"; };
+		C40947AA1D7C17FB00455D4B /* AbstractItemVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractItemVC.h; sourceTree = "<group>"; };
+		C40947AB1D7C17FB00455D4B /* AbstractItemVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractItemVC.m; sourceTree = "<group>"; };
 		C43E08811D78E3CC00676E6B /* PuttiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuttiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C43E08851D78E3CC00676E6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C43E08871D78E3CC00676E6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 		C40947A51D7C134200455D4B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C40947AA1D7C17FB00455D4B /* AbstractItemVC.h */,
+				C40947AB1D7C17FB00455D4B /* AbstractItemVC.m */,
 				C4B190D51D7A298200854A86 /* ItemDetailVC.h */,
 				C4B190D61D7A298200854A86 /* ItemDetailVC.m */,
 				C43E089B1D78E4DB00676E6B /* ItemListVC.h */,
@@ -322,6 +327,7 @@
 				C463437C1D78F347004E7619 /* EventModel.m in Sources */,
 				C4B190E01D7A49CF00854A86 /* ItemImageCell.m in Sources */,
 				C491329E1D7B881E00C2850F /* CellHeadView.m in Sources */,
+				C40947AC1D7C17FB00455D4B /* AbstractItemVC.m in Sources */,
 				C4B073661D793476001ABA1B /* ItemListCell.m in Sources */,
 				C4B190DD1D7A386E00854A86 /* ItemLabelCell.m in Sources */,
 				C4E99B341D7A79C100C5CC4B /* ItemRichLabelCell.m in Sources */,
