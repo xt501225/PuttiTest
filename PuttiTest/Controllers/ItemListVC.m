@@ -56,6 +56,8 @@
               [self.tableView reloadData];
     }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              hud.label.text =@"network error,please reload";
+              [hud hideAnimated:YES afterDelay:2.f];
               NSLog(@"%@",error.localizedDescription);
           }];
     
@@ -81,14 +83,21 @@
     [request setValue:@"697381b065bbfe4a714cd14cf394978e" forHTTPHeaderField:@"X-Key"];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        [hud hideAnimated:YES];
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
-        // JSON TO Model
-        self.events = [[Events alloc]init];
-        NSString* jsonData = [dic valueForKeyPath:CONSTANT_EVENT];
-        self.events.itemModels = [NSArray yy_modelArrayWithClass:[EventModel class] json:jsonData];
-        [self initSectionDescriptor];
-        [self.tableView reloadData];
+        if (connectionError != nil || data == nil) {
+            hud.label.text =@"network error,please reload";
+            [hud hideAnimated:YES afterDelay:2.f];
+            NSLog(@"network error");
+        }
+        else {
+            [hud hideAnimated:YES];
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+            // JSON TO Model
+            self.events = [[Events alloc]init];
+            NSString* jsonData = [dic valueForKeyPath:CONSTANT_EVENT];
+            self.events.itemModels = [NSArray yy_modelArrayWithClass:[EventModel class] json:jsonData];
+            [self initSectionDescriptor];
+            [self.tableView reloadData];
+        }
 
     }];
 }
