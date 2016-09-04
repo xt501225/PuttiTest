@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  PuttiTest
 //
-//  Created by summer on 16/9/2.
+//  Created by sam on 16/9/2.
 //  Copyright © 2016年 Sam. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "ItemListVC.h"
 
 @interface AppDelegate ()
 
@@ -16,9 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = window;
+    
+    ItemListVC* listvc = [[ItemListVC alloc]init];
+    UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:listvc];
+    
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

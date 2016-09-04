@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[ItemImageCell initConstraints]:ItemImageCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "superview.frame">
+            </PersistentString>
+            <PersistentString
+               value = "superview.bounds.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ItemListVC viewWillAppear:]:ItemListVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[result valueForKeyPath:@&quot;Events&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "self.events.itemModels">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__29-[ItemListVC viewWillAppear:]_block_invoke:ItemListVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "model.newsID">
+            </PersistentString>
+            <PersistentString
+               value = "model.ordering">
+            </PersistentString>
+            <PersistentString
+               value = "model.eventDateTime">
+            </PersistentString>
+            <PersistentString
+               value = "model.description">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

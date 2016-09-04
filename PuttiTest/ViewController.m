@@ -2,7 +2,7 @@
 //  ViewController.m
 //  PuttiTest
 //
-//  Created by summer on 16/9/2.
+//  Created by sam on 16/9/2.
 //  Copyright © 2016年 Sam. All rights reserved.
 //
 
@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"helloworld");
     // Do any additional setup after loading the view, typically from a nib.
 }
 
