@@ -10,7 +10,7 @@
 
 
 @interface ItemListCell()
-@property (nonatomic,strong) Model* itemModel;
+@property (nonatomic,strong) EventModel* itemModel;
 
 @end
 
@@ -57,7 +57,7 @@
 }
 
 
-- (void)prepareForDisplayWithValue:(Model *)itemModel {
+- (void)prepareForDisplayWithValue:(EventModel *)itemModel {
     self.itemModel = itemModel;
     [_titleLabel setText:[_itemModel title]];
     [_subtitleLabel setText:[_itemModel ordering]];

@@ -7,15 +7,11 @@ inhibit_all_warnings!
 
 def shared_pods
 
-#HTTP Request
-#pod 'YTKNetwork' => '1.0.0'
-
 pod 'AFNetworking'
 
-#Model和JSON的转换
+#JSON Model Convertion
 pod 'YYModel'
 
-# Autolayout
 pod 'Masonry'
 
 pod 'SDWebImage', '~>3.8'

@@ -15,9 +15,7 @@
 - (void)initCell {
     self.label = [UILabel new];
     UIFont *font = [UIFont systemFontOfSize:14.0f];
-    //[self.label setFont:[UIFont systemFontOfSize:labelFontSize]];
     self.label.font = font;
-   // [_label setLineBreakMode:NSLineBreakByTruncatingTail];
     [_label setNumberOfLines:0];
     [self addSubview:self.label];
     [self.contentView addSubview:_label];
