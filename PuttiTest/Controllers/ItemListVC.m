@@ -8,26 +8,27 @@
 
 #import "ItemListVC.h"
 
+@interface ItemListVC() {
+    SectionDescriptor *_listSD;
+}
+
+@end
+
 @implementation ItemListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.navigationItem.title =@"Putti Test";
-    [self.tableView setEstimatedRowHeight:44.0];
     //[self loadDataFromServerByAFNetworking];
     [self loadDataFromServerByNSURLConnection];
     
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
+/**
+ *  load data using AFNetworking
+ */
 - (void)loadDataFromServerByAFNetworking {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
@@ -59,6 +60,9 @@
     
 }
 
+/**
+ *  load data using NSURLConnection
+ */
 - (void)loadDataFromServerByNSURLConnection {
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
@@ -82,49 +86,22 @@
         self.events = [[Events alloc]init];
         NSString* jsonData = [dic valueForKeyPath:CONSTANT_EVENT];
         self.events.itemModels = [NSArray yy_modelArrayWithClass:[EventModel class] json:jsonData];
+        [self initSectionDescriptor];
         [self.tableView reloadData];
 
     }];
 }
 
-#pragma mark - TableView dataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return [self.events.itemModels count];
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void) initSectionDescriptor {
+    _listSD = [SectionDescriptor new];
+    _listSD.headerHeight = CGFLOAT_MIN;
     
-    __kindof UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"itemListCell"];
-    if (!cell) {
-        cell = [[ItemListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"itemListCell"];
-    }
-    if ([cell conformsToProtocol:@protocol(ItemCellProtocol)]) {
-        UITableViewCell<ItemCellProtocol> *cellWithProtocal = cell;
-        if ([cellWithProtocal respondsToSelector:@selector(prepareForDisplayWithValue:)])
-        {
-            [cellWithProtocal prepareForDisplayWithValue:self.events.itemModels[indexPath.row]];
-        }
-    }
+    [self.events.itemModels enumerateObjectsUsingBlock:^(EventModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        RowDescriptor* itemRD = [RowDescriptor descriptorWithCellClass:[ItemListCell class] cellValue: obj];
+        [_listSD addRowDescriptor:itemRD];
+    }];
+    [self addSectionDescriptor:_listSD];
     
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
-    
-    return cell;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    EventModel* itemModel = self.events.itemModels[indexPath.row];
-    ItemDetailVC* vc = [[ItemDetailVC alloc]initWithItem:itemModel];
-    [self.navigationController pushViewController:vc animated:true];
-}
-
 
 @end

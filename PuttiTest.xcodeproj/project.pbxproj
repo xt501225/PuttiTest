@@ -177,23 +177,23 @@
 		C4B073631D793435001ABA1B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				C4B073641D793476001ABA1B /* ItemListCell.h */,
-				C4B073651D793476001ABA1B /* ItemListCell.m */,
-				C4B073671D797FC9001ABA1B /* ItemCellProtocol.h */,
 				C4B190D81D7A36D700854A86 /* AbstractCell.h */,
 				C4B190D91D7A36D700854A86 /* AbstractCell.m */,
+				C491329C1D7B881E00C2850F /* CellHeadView.h */,
+				C491329D1D7B881E00C2850F /* CellHeadView.m */,
+				C4B073671D797FC9001ABA1B /* ItemCellProtocol.h */,
+				C4B073641D793476001ABA1B /* ItemListCell.h */,
+				C4B073651D793476001ABA1B /* ItemListCell.m */,
 				C4B190DB1D7A386E00854A86 /* ItemLabelCell.h */,
 				C4B190DC1D7A386E00854A86 /* ItemLabelCell.m */,
 				C4B190DE1D7A49CF00854A86 /* ItemImageCell.h */,
 				C4B190DF1D7A49CF00854A86 /* ItemImageCell.m */,
 				C4E99B321D7A79C100C5CC4B /* ItemRichLabelCell.h */,
 				C4E99B331D7A79C100C5CC4B /* ItemRichLabelCell.m */,
-				C4B190E21D7A5FAD00854A86 /* SectionDescriptor.h */,
-				C4B190E31D7A5FAD00854A86 /* SectionDescriptor.m */,
 				C4B190E51D7A603100854A86 /* RowDescriptor.h */,
 				C4B190E61D7A603100854A86 /* RowDescriptor.m */,
-				C491329C1D7B881E00C2850F /* CellHeadView.h */,
-				C491329D1D7B881E00C2850F /* CellHeadView.m */,
+				C4B190E21D7A5FAD00854A86 /* SectionDescriptor.h */,
+				C4B190E31D7A5FAD00854A86 /* SectionDescriptor.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

@@ -6,12 +6,12 @@
 //  Copyright © 2016年 Sam. All rights reserved.
 //
 
-
+#import "AbstractCell.h"
 #import "EventModel.h"
 #import "ItemCellProtocol.h"
 #import "ItemDetailVC.h"
 
-@interface ItemListCell : UITableViewCell<ItemCellProtocol>
+@interface ItemListCell : AbstractCell
 
 //image
 @property (nonatomic,strong) UIImageView * imageImageView;

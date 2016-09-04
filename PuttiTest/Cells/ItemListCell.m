@@ -9,30 +9,14 @@
 #import "ItemListCell.h"
 
 
-static const int SizeI = 80;
-
-@interface ItemListCell () {
-    BOOL _setConstraints;
-}
-@property (nonatomic,strong) EventModel* item;
+@interface ItemListCell()
+@property (nonatomic,strong) EventModel* itemModel;
 
 @end
 
 @implementation ItemListCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style
-              reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self initCell];
-    }
-    return self;
-}
 
-/**
- *  init itemListCell
- */
 - (void)initCell {
     UIView *superview = self.contentView;
     
@@ -49,26 +33,12 @@ static const int SizeI = 80;
     [superview addSubview:_lastModifiedTimeLabel];
 }
 
-/**
- *  update cell constraint
- */
-- (void)updateConstraints {
-    if (!_setConstraints) {
-        [self initConstraints];
-        _setConstraints = YES;
-    }
-    
-    [super updateConstraints];
-}
 
-/**
- *  init cell constraints
- */
 - (void)initConstraints {
     UIView *superview = self.contentView;
     CGFloat hOffset = [self hPadding];
     [_imageImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(SizeI);
+        make.size.mas_equalTo(80);
         make.top.and.bottom.and.left.equalTo(superview).priority(999);
     }];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -87,24 +57,20 @@ static const int SizeI = 80;
 }
 
 
-- (void)prepareForDisplayWithValue:(EventModel *)item {
-    self.item = item;
-    [_titleLabel setText:[item title]];
-    [_subtitleLabel setText:[item ordering]];
-    [_lastModifiedTimeLabel setText:[item updatedDate]];
-    [_imageImageView sd_setImageWithURL:[NSURL URLWithString: item.thumbnailImageURL] placeholderImage:[UIImage imageNamed:@"tableViewCell_itemListPlaceholder"]];
+- (void)prepareForDisplayWithValue:(EventModel *)itemModel {
+    self.itemModel = itemModel;
+    [_titleLabel setText:[_itemModel title]];
+    [_subtitleLabel setText:[_itemModel ordering]];
+    [_lastModifiedTimeLabel setText:[_itemModel updatedDate]];
+    [_imageImageView sd_setImageWithURL:[NSURL URLWithString: _itemModel.thumbnailImageURL] placeholderImage:[UIImage imageNamed:@"tableViewCell_itemListPlaceholder"]];
 }
 
-/**
- *  tap cell event
- *
- *  @param tableView      <#tableView description#>
- *  @param viewController <#viewController description#>
- */
+
 - (void)tappedInTableView:(UITableView *)tableView viewController:(UIViewController *)viewController {
-//    ItemDetailVC *vc = [ItemDetailVC vcWithItem:_item];
-//    [viewController.navigationController pushViewController:vc animated:YES];
+    ItemDetailVC* vc = [[ItemDetailVC alloc]initWithItem:_itemModel];
+    [viewController.navigationController pushViewController:vc animated:true];
 }
+
 
 #pragma mark Component
 - (UILabel *)componentTitleLabel {
@@ -114,11 +80,11 @@ static const int SizeI = 80;
     
     return label;
 }
+
 - (UILabel *)componentSubtitleLabel {
     UILabel *label = [UILabel new];
     CGFloat titleFontSize =[UIFont systemFontSize]+1.5;
     [label setFont:[UIFont systemFontOfSize:titleFontSize]];
-   // [label setTextColor:[ColorTheme primaryColor]];
     return label;
 }
 
@@ -131,18 +97,9 @@ static const int SizeI = 80;
 
 - (UILabel *)componentTimeLabel {
     UILabel *label = [UILabel new];
-    CGFloat timeFontSize =11;
-    [label setFont:[UIFont systemFontOfSize:timeFontSize]];
-   // [label setTextColor:[ColorTheme lightGrayColor]];
+    [label setFont:[UIFont systemFontOfSize:11.0f]];
     [label setTextAlignment:NSTextAlignmentRight];
     return label;
 }
 
-- (CGFloat)vPadding {
-    return 15;
-}
-
-- (CGFloat)hPadding {
-    return 20;
-}
 @end

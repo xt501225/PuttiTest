@@ -19,13 +19,6 @@
 @implementation ItemDetailVC
 
 
-/**
- *  init method
- *
- *  @param eventModel Model Object
- *
- *  @return instanceType
- */
 - (instancetype) initWithItem: (EventModel*) eventModel {
      self = [super init];
     

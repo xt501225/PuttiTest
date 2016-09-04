@@ -6,14 +6,17 @@
 //  Copyright © 2016年 Sam. All rights reserved.
 //
 
+#import "AbstractItemVC.h"
 #import "Constant.h"
 #import "Events.h"
 #import "EventModel.h"
 #import "ItemListCell.h"
 #import "ItemCellProtocol.h"
 #import "ItemDetailVC.h"
+#import "SectionDescriptor.h"
+#import "RowDescriptor.h"
 
-@interface ItemListVC : UITableViewController
+@interface ItemListVC : AbstractItemVC
 
 @property (nonatomic,strong) Events* events;
 
