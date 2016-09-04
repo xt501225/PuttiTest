@@ -7,9 +7,7 @@
 //
 
 #import "AbstractCell.h"
-#import "Masonry.h"
 #import "Constant.h"
-#import "UIImageView+WebCache.h"
 
 
 @class ImageCellModel;

@@ -6,8 +6,6 @@
 //  Copyright © 2016年 Sam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "Masonry.h"
 
 @interface CellHeadView : UIView
 

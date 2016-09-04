@@ -16,7 +16,6 @@
 		C43E08941D78E3CC00676E6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C43E08921D78E3CC00676E6B /* LaunchScreen.storyboard */; };
 		C43E089D1D78E4DB00676E6B /* ItemListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C43E089C1D78E4DB00676E6B /* ItemListVC.m */; };
 		C463437C1D78F347004E7619 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C463437B1D78F347004E7619 /* EventModel.m */; };
-		C46343801D7916FB004E7619 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C463437F1D7916FB004E7619 /* BaseRequest.m */; };
 		C46343831D7923D5004E7619 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = C46343821D7923D5004E7619 /* Events.m */; };
 		C491329E1D7B881E00C2850F /* CellHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C491329D1D7B881E00C2850F /* CellHeadView.m */; };
 		C4B073661D793476001ABA1B /* ItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B073651D793476001ABA1B /* ItemListCell.m */; };
@@ -32,6 +31,7 @@
 /* Begin PBXFileReference section */
 		864534A834B5A2D645973E1E /* libPods-PuttiTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PuttiTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		986378BBF654F64F6E341685 /* Pods-PuttiTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuttiTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuttiTest/Pods-PuttiTest.debug.xcconfig"; sourceTree = "<group>"; };
+		C40947A61D7C146300455D4B /* PCH.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCH.pch; sourceTree = "<group>"; };
 		C43E08811D78E3CC00676E6B /* PuttiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuttiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C43E08851D78E3CC00676E6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C43E08871D78E3CC00676E6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,8 +47,6 @@
 		C463437A1D78F347004E7619 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		C463437B1D78F347004E7619 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		C463437D1D791067004E7619 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
-		C463437E1D7916FB004E7619 /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
-		C463437F1D7916FB004E7619 /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
 		C46343811D7923D5004E7619 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 		C46343821D7923D5004E7619 /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Events.m; sourceTree = "<group>"; };
 		C491329C1D7B881E00C2850F /* CellHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellHeadView.h; sourceTree = "<group>"; };
@@ -102,6 +100,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C40947A51D7C134200455D4B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4B190D51D7A298200854A86 /* ItemDetailVC.h */,
+				C4B190D61D7A298200854A86 /* ItemDetailVC.m */,
+				C43E089B1D78E4DB00676E6B /* ItemListVC.h */,
+				C43E089C1D78E4DB00676E6B /* ItemListVC.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C43E08781D78E3CB00676E6B = {
 			isa = PBXGroup;
 			children = (
@@ -124,16 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				C4B073631D793435001ABA1B /* Cells */,
+				C40947A51D7C134200455D4B /* Controllers */,
 				C46343791D78F2E8004E7619 /* Models */,
 				C43E08871D78E3CC00676E6B /* AppDelegate.h */,
 				C43E08881D78E3CC00676E6B /* AppDelegate.m */,
-				C463437E1D7916FB004E7619 /* BaseRequest.h */,
-				C463437F1D7916FB004E7619 /* BaseRequest.m */,
 				C463437D1D791067004E7619 /* Constant.h */,
-				C4B190D51D7A298200854A86 /* ItemDetailVC.h */,
-				C4B190D61D7A298200854A86 /* ItemDetailVC.m */,
-				C43E089B1D78E4DB00676E6B /* ItemListVC.h */,
-				C43E089C1D78E4DB00676E6B /* ItemListVC.m */,
+				C40947A61D7C146300455D4B /* PCH.pch */,
 				C43E088A1D78E3CC00676E6B /* ViewController.h */,
 				C43E088B1D78E3CC00676E6B /* ViewController.m */,
 				C43E088D1D78E3CC00676E6B /* Main.storyboard */,
@@ -324,7 +329,6 @@
 				C43E08861D78E3CC00676E6B /* main.m in Sources */,
 				C4B190DA1D7A36D700854A86 /* AbstractCell.m in Sources */,
 				C4B190E71D7A603100854A86 /* RowDescriptor.m in Sources */,
-				C46343801D7916FB004E7619 /* BaseRequest.m in Sources */,
 				C43E089D1D78E4DB00676E6B /* ItemListVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +382,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -388,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -420,13 +425,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -438,7 +444,9 @@
 			baseConfigurationReference = 986378BBF654F64F6E341685 /* Pods-PuttiTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PuttiTest/PCH.pch";
 				INFOPLIST_FILE = PuttiTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PuttiTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,7 +458,9 @@
 			baseConfigurationReference = C8C3E4C7B39B69BB3AA38181 /* Pods-PuttiTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PuttiTest/PCH.pch";
 				INFOPLIST_FILE = PuttiTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PuttiTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

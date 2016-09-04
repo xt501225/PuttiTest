@@ -6,13 +6,10 @@
 //  Copyright © 2016年 Sam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+
 #import "EventModel.h"
-#import "Masonry.h"
-#import "UIImageView+WebCache.h"
 #import "ItemCellProtocol.h"
 #import "ItemDetailVC.h"
-#import "EventModel.h"
 
 @interface ItemListCell : UITableViewCell<ItemCellProtocol>
 

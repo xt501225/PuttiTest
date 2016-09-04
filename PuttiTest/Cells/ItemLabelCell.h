@@ -7,7 +7,7 @@
 //
 
 #import "AbstractCell.h"
-#import "Masonry.h"
+
 
 @interface ItemLabelCell : AbstractCell
    @property UILabel *leftLabel;

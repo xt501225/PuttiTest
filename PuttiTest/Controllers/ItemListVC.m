@@ -7,8 +7,6 @@
 //
 
 #import "ItemListVC.h"
-#import "AFNetworking.h"
-#import "MBProgressHUD.h"
 
 @implementation ItemListVC
 

@@ -7,7 +7,6 @@
 //
 
 #import "AbstractCell.h"
-#import "Masonry.h"
 #import "Constant.h"
 
 @interface ItemRichLabelCell : AbstractCell
