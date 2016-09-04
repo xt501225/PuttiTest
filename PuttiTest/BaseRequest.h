@@ -8,6 +8,9 @@
 
 
 #import "YTKNetworkPrivate.h"
+#import "YTKNetworkConfig.h"
+#import <YYModel.h>
+#import "Constant.h"
 
 @interface BaseRequest : YTKRequest
 

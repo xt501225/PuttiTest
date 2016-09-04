@@ -7,12 +7,7 @@
 //
 
 #import "ItemDetailVC.h"
-#import "ItemCellProtocol.h"
-#import "ItemImageCell.h"
-#import "ItemLabelCell.h"
-#import "ItemRichLabelCell.h"
-#import "Constant.h"
-#import "CellHeadView.h"
+
 
 @interface ItemDetailVC() {
     SectionDescriptor *_imageSD;

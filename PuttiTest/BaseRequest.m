@@ -7,11 +7,7 @@
 //
 
 #import "BaseRequest.h"
-#import <CommonCrypto/CommonCryptor.h>
-#import <CommonCrypto/CommonDigest.h>
-#import "YTKNetworkConfig.h"
-#import <YYModel.h>
-#import "Constant.h"
+
 
 
 @interface BaseRequest () {

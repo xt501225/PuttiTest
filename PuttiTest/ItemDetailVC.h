@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "SectionDescriptor.h"
 #import "EventModel.h"
+#import "ItemCellProtocol.h"
+#import "ItemImageCell.h"
+#import "ItemLabelCell.h"
+#import "ItemRichLabelCell.h"
+#import "Constant.h"
+#import "CellHeadView.h"
 
 @interface ItemDetailVC : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

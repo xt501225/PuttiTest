@@ -12,6 +12,7 @@
 
 @synthesize description = _description;
 
+
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
               @"description": @"Description",

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ItemListVC.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
