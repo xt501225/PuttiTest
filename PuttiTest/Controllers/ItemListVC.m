@@ -52,6 +52,7 @@
               self.events = [[Events alloc]init];
               NSString* jsonData = [dic valueForKeyPath:CONSTANT_EVENT];
               self.events.itemModels = [NSArray yy_modelArrayWithClass:[EventModel class] json:jsonData];
+              [self initSectionDescriptor];
               [self.tableView reloadData];
     }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
